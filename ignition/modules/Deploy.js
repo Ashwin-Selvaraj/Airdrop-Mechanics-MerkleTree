@@ -1,6 +1,7 @@
 const { ethers } = require("hardhat");
 require("dotenv").config();
-const {writeFileSync } = require("fs");
+const {readFileSync,writeFileSync } = require("fs");
+const { StandardMerkleTree } = require("@openzeppelin/merkle-tree");
 
 async function main() {
   const private_key = process.env.PRIVATE_KEY;
@@ -29,20 +30,29 @@ async function main() {
   const balance = await provider.getBalance(deployer);
   console.log("Deployer Balance:", ethers.formatEther(balance),process.env.TOKEN_SYMBOL);
 
+  // Read Merkle root from the JSON file
+  const merkleTreeData = StandardMerkleTree.load(JSON.parse(readFileSync("./MerkleTree/tree.json")));
+  const merkleRoot = merkleTreeData.root;
+  
+  if (!merkleRoot) {
+    console.error("Merkle root is missing in the tree JSON.");
+    process.exit(1);
+  }
+
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   // Deploying TheMemeTV Contract
-  const ASHFactory = await ethers.getContractFactory("AshToken");
-  const ash = await ASHFactory.connect(deployer).deploy(); 
+  const TMTVFactory = await ethers.getContractFactory("TheMemeTV");
+  const tmtv = await TMTVFactory.connect(deployer).deploy(merkleRoot); // Pass the Merkle root as argument
   await delay(2000); // Add delay here
-  await ash.waitForDeployment();
-  console.log(`ASH Token contract address: ${ash.target}`);
+  await tmtv.waitForDeployment();
+  console.log(`TMTV contract address: ${tmtv.target}`);
 
   // Deploying Airdrop Contract
-  const AirdropFactory = await ethers.getContractFactory("AirdropSignature");
-  const airdrop = await AirdropFactory.connect(deployer).deploy(deployer.address, ash.target);
+  const AirdropFactory = await ethers.getContractFactory("Airdrop");
+  const airdrop = await AirdropFactory.connect(deployer).deploy(tmtv.target);
   await delay(2000); // Add delay here
   await airdrop.waitForDeployment();
   console.log(`Airdrop contract address: ${airdrop.target}`);
@@ -53,8 +63,9 @@ async function main() {
     JSON.stringify(
       {
         network,
-        TheMemeTVContractAddress: ash.target,
-        AirdropContractAddress: airdrop.target
+        TheMemeTVContractAddress: tmtv.target,
+        AirdropContractAddress: airdrop.target,
+        MerkleRoot: merkleRoot, // Include the Merkle root in the output
       },
       null,
       2
@@ -67,5 +78,5 @@ main()
   .catch((error) => {
     console.log(error.message);
     process.exit(1);
-});
+  });
   

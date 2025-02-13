@@ -1,0 +1,20 @@
+TOTAL SUPPLY = 100,000,000,021		
+				
+				
+LIQUIDITY = 42,000,000,000		                42.00%
+				
+DISTRIBUTION = 21,000,000,000		            21.00%
+				
+MARKETING & PARTNERSHIPS = 10,000,000,000		10.00%
+				
+AIRDROP = 11,000,000,000		                11.00%
+				
+PROOF OF NOTHING = 11,000,000,000		        11.00%
+				
+FOUNDING TEAM = 5,000,000,021		            5.00%
+				
+
+
+Airdrop Logic:-
+Claimable Airdrop for distribution app (Users will pay gas fees for the transaction)
+Normal Airdrop mechanism for proof of nothing and other airdrop mechanisms.

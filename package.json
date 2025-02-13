@@ -1,16 +1,31 @@
 {
-  "name": "hardhat-project",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.18"
-  },
+  "name": "thememetv_bsc",
+  "version": "1.0.0",
+  "description": "Bep-20",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "node ignition/modules/Deploy.js",
-    "sign": "node ignition/modules/SignAirdrop.js"
+    "deploy": "node ignition/modules/deploy.js",
+    "merkleTree": "node MerkleTree/createMerkleTree.js",
+    "merkleProof": "node MerkleTree/createMerkleProof.js",
+    "updateMerkle": "node ignition/modules/updateMerkleRoot.js",
+    "bulkTransfer": "node ignition/modules/bulkTransfer.js",
+    "prepare": "husky install"
+  },
+  "author": "Ashwin",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.17",
+    "husky": "^9.1.7"
   },
   "dependencies": {
+    "@openzeppelin/merkle-tree": "^1.0.7",
+    "chai": "^4.3.7",
     "dotenv": "^16.4.7",
-    "fs": "^0.0.1-security"
+    "ethers": "^6.13.4",
+    "fs": "^0.0.1-security",
+    "mocha": "^10.4.0",
+    "solady": "^0.0.287"
   }
 }

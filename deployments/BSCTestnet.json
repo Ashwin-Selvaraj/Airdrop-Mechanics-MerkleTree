@@ -1,5 +1,6 @@
 {
   "network": "BSCTestnet",
-  "TheMemeTVContractAddress": "0x1626aBF5EdbcfC7a711531872757e5Efdb53f6E7",
-  "AirdropContractAddress": "0xEb3C7Ebb5f72cBcf6A1c088bB682546b20635E2C"
+  "TheMemeTVContractAddress": "0x9afaAe655f8e16A1F0C0202409E7B60ce8aCF083",
+  "AirdropContractAddress": "0xCcC4F049455cd911AF2d8F9660938624f8f1b558",
+  "MerkleRoot": "0x2bf45b080b49130f183aa3da2c2c011b0e00698cade331d782015a8c73fe3918"
 }
