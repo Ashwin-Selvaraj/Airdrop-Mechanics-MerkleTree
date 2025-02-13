@@ -1,0 +1,22 @@
+[
+  {
+    "recipient": "0x03C6FcED478cBbC9a4FAB34eF9f40767739D1Ff7",
+    "amount": 10,
+    "signature": "0x589d3c6e5b7db59167093864ed33a83fb01f1cd33a8227cc43d425a261f44b197a323f32e68a539a9fe724d875dadeda7a565f313ce8788bbc688fbc908a9f4e1b"
+  },
+  {
+    "recipient": "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2",
+    "amount": 20,
+    "signature": "0x17d8540d227e30477234b9f456bdf6e3e98aa1ed53fb3148388258cab571215b6c84a24d072414f7fbc84b69a0a6d76056918aa22781eb52a4dd6d3a426b66201b"
+  },
+  {
+    "recipient": "0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB",
+    "amount": 20,
+    "signature": "0xc95d5acbe18e09c7d28b06ade80c54c7ee534d747c276ba9037a04a1192be2f304d1f160cdb2d21de2fdb96237437cb4370f134d5724b5749e08c85ca5c92fba1b"
+  },
+  {
+    "recipient": "0x8358847c2D38F97F2Fc20cfA83F61075C4BfD14A",
+    "amount": 100,
+    "signature": "0xb3b9987196d899d9410bcab9cdefd88915190f4edbb3c71169c7828e28a25c1d5e9e2a3b507dee2d62d9db37a9917d9e5cb86c2d4fcdb90a57cc4e1bb3703e351b"
+  }
+]

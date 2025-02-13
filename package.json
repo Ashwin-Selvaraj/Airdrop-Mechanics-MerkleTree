@@ -1,0 +1,16 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.18"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node ignition/modules/Deploy.js",
+    "sign": "node ignition/modules/SignAirdrop.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "fs": "^0.0.1-security"
+  }
+}
